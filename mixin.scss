@@ -1,3 +1,9 @@
+// Helper mixin to insert clearfix.
+/* How to use:
+  .selector {
+    @include clearfix();
+  }
+*/
 @mixin clearfix() {
   &::after {
     content: " "; /* Older browser do not support empty content */
@@ -8,6 +14,14 @@
   }
 }
 
+// Helper mixin to insert svg with css ::before or ::after.
+/* How to use:
+.selector {
+  &::before {
+     @include svg-background('../svg/raise-your-hand-to-ask.svg', transparent, 40px);
+  }
+}
+*/
 @mixin svg-background($path, $bg-color: transparent, $size: 50px) {
     content: "";
     position: relative;
