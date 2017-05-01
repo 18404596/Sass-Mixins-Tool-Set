@@ -1,0 +1,22 @@
+@mixin clearfix() {
+  &::after {
+    content: " "; /* Older browser do not support empty content */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+  }
+}
+
+@mixin svg-background($path, $bg-color: transparent, $size: 50px) {
+    content: "";
+    position: relative;
+    background: $bg-color url($path) center center no-repeat;
+    width: $size;
+    height: $size;
+    background-size: $size;
+    z-index: 10;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: -15px;
+}
